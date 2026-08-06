@@ -1,7 +1,10 @@
+using HoteListing.Api.Model;
+using Microsoft.EntityFrameworkCore;
 var builder = WebApplication.CreateBuilder(args);
-
+//sets up the application
 // Add services to the container.
-
+var connectionString = builder.Configuration.GetConnectionString("HoteListingDbConnectionString");
+builder.Services.AddDbContext<HoteListingDbContext>(options => options.UseSqlServer(connectionString)); 
 builder.Services.AddControllers();
 // Learn more about configuring OpenAPI at https://aka.ms/aspnet/openapi
 builder.Services.AddOpenApi();

@@ -5,7 +5,7 @@ Accept: application/json
 
 ###
 
-POST  {{{{HoteListing}}}}/api/Hotels
+POST  {{HoteListing}}/api/Hotels
 Content-Type: application/json
 
 {

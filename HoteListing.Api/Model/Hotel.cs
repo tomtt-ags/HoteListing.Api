@@ -1,3 +1,5 @@
+using HoteListing.Api.model;
+
 namespace HoteListing.Api.Model; 
 public class Hotel
 {
@@ -8,5 +10,11 @@ public class Hotel
     public string Address {get; set;}
 
     public double Rating{get; set;}
+
+    public int CountryId{get; set;}
+    
+    public Country? country{get; set;}
+
+    public IList<Review> reviews{get; set;}
 
 }

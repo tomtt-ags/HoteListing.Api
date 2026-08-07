@@ -10,5 +10,6 @@ public class Country
     public double Rating{get; set;}
 
     public IList<Hotel> hotels {get; set;}
+    //Console.WriteLine("hey"); 
 
 }

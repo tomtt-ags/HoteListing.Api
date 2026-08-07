@@ -1,4 +1,4 @@
-using HoteListing.Api.model;
+using HoteListing.Api.Model;
 
 namespace HoteListing.Api.Model; 
 public class Hotel
@@ -15,6 +15,5 @@ public class Hotel
     
     public Country? country{get; set;}
 
-    public IList<Review> reviews{get; set;}
 
 }

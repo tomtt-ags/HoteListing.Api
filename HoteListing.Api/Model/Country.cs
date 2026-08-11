@@ -2,14 +2,10 @@ namespace HoteListing.Api.Model;
 public class Country
 {
     public int CountryId {get; set;}
-    
-    public string Name {get; set;}
+    public required string Name {get; set;}
+    public required string Shortname {get; set;}
 
-    public string Shortname {get; set;}
+    public IList<Hotel> hotels {get; set;} = new List<Hotel>();
 
-    public double Rating{get; set;}
-
-    public IList<Hotel> hotels {get; set;}
-    //Console.WriteLine("hey"); 
 
 }

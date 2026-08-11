@@ -10,22 +10,65 @@ Content-Type: application/json
 
 {
     //Hotel
-    "id": 4,
-    "name": "Grand Plaza",
-    "address": "123 Main St",
-    "rating": 4.5
+    "name": "Grand Plaa Vie",
+    "address": "123 Main St Updated",
+    "rating": 4.8,
+    "countryId": 2003
 }
 
 ###
-@id=1
-DELETE  {{HoteListing}}/api/Hotels/{{id}}
+@hotelid=7
+DELETE  {{HoteListing}}/api/Hotels/{{hotelid}}
 
 ###
 
-GET  {{HoteListing}}/api/Hotels/{{id}}
+GET  {{HoteListing}}/api/Hotels/{{hotelid}}
 
 ###
 
-PUT  {{HoteListing}}/api/Hotels/{{id}}
+PUT  {{HoteListing}}/api/Hotels/{{hotelid}}
+Content-Type: application/json
+
+{
+    "Id" : 7,
+    "name" : "Grand Plaza Updated", 
+    "address" : "123 Main St Updated",
+    "rating" : 4.8,
+    "countryId" : 1
+}
+
+###
+
+GET {{HoteListing}}/api/Countries
+Accept: application/json
+
+###
+POST {{HoteListing}}/api/Countries
+Content-Type: application/json
+
+{
+    //Hotel
+    "name": "Turks and Caics",
+    "shortName": "TC"
+}
+
+###
+@countryid=2003
+DELETE {{HoteListing}}/api/Countries/{{countryid}}
+
+###
+
+GET {{HoteListing}}/api/Countries/{{countryid}}
+
+###
+
+PUT {{HoteListing}}/api/Countries/{{countryid}}
+Content-Type: application/json
+
+{
+    "Id" : 2003,
+    "name" : "Jamaica", 
+    "shortName" : "JM"
+}
 
 ###

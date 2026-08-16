@@ -1,0 +1,130 @@
+@HoteListing = http://localhost:5247
+@json = application/json
+@apiKey=dXNlcjFAbG9jYWxob3N0LmNvbTpQQHNzrbd29yZDE=
+
+GET {{HoteListing}}/api/Hotels
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiI1YzA4OTljZS1lNTFiLTQ2NjktOGU5Ny0zMzQ0Y2QyNzZlZDQiLCJlbWFpbCI6ImFkbWluMTNAbG9jYWxob3N0LmNvbSIsImp0aSI6ImJhNzMxZTc5LTJhZjgtNDY0OC1hOTQ2LTI5MzJhNTdlMjYwNCIsIm5hbWUiOiJMYXN0LCBGaXJzdCIsImh0dHA6Ly9zY2hlbWFzLm1pY3Jvc29mdC5jb20vd3MvMjAwOC8wNi9pZGVudGl0eS9jbGFpbXMvcm9sZSI6IkFkbWluaXN0cmF0b3IiLCJleHAiOjE3ODY3MjM0NDAsImlzcyI6IkhvdGVsTGlzdGluZ0FQSSIsImF1ZCI6IkhvdGVsTGlzdGluZ0FQSUNsaWVudCJ9.BSRW_FbT_06JiZOuc5lZYeE7n-ke5KsD2QwzLEJVebQ
+
+###
+
+POST  {{HoteListing}}/api/Hotels
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIxNWY1MmY5OC02NDBjLTRmZTItODQyNi1mNWVhMTIzN2UxNDQiLCJlbWFpbCI6ImFkbWluMTFAbG9jYWxob3N0LmNvbSIsImp0aSI6IjIzODk4MTcxLTdkODctNDNlMi05YjcxLTFhMTA5NTBhMzYyYyIsIm5hbWUiOiJMYXN0LCBGaXJzdCIsImh0dHA6Ly9zY2hlbWFzLm1pY3Jvc29mdC5jb20vd3MvMjAwOC8wNi9pZGVudGl0eS9jbGFpbXMvcm9sZSI6IkFkbWluaXN0cmF0b3IiLCJleHAiOjE3ODY2MTU2NjEsImlzcyI6IkhvdGVsTGlzdGluZ0FQSSIsImF1ZCI6IkhvdGVsTGlzdGluZ0FQSUNsaWVudCJ9.S-5jZZDy1mnjQ1m7djtWYVzEKqYXsRQEab2gefnVaPg
+
+{
+    //Hotel
+    "name": "Grand Plaap Vie",
+    "address": "123 Main St Updated",
+    "rating": 4.8,
+    "countryId": 2003
+}
+
+###
+@hotelid=7
+DELETE  {{HoteListing}}/api/Hotels/{{hotelid}}
+
+###
+
+GET  {{HoteListing}}/api/Hotels/{{hotelid}}
+
+###
+
+PUT  {{HoteListing}}/api/Hotels/{{hotelid}}
+Content-Type: application/json
+
+{
+    "Id" : 7,
+    "name" : "Grand Plaza Updated", 
+    "address" : "123 Main St Updated",
+    "rating" : 4.8,
+    "countryId" : 1
+}
+
+###
+
+GET {{HoteListing}}/api/Countries
+Accept: application/json
+
+###
+POST {{HoteListing}}/api/Countries
+Content-Type: application/json
+
+{
+    //Hotel
+    "name": "Turks and Caics",
+    "shortName": "TC"
+}
+
+###
+@countryid=2003
+DELETE {{HoteListing}}/api/Countries/{{countryid}}
+
+###
+
+GET {{HoteListing}}/api/Countries/{{countryid}}
+
+###
+
+PUT {{HoteListing}}/api/Countries/{{countryid}}
+Content-Type: application/json
+
+{
+    "Id" : 2003,
+    "name" : "Jamaica", 
+    "shortName" : "JM"
+}
+
+###
+
+POST {{HoteListing}}/api/auth/register
+Content-Type: application/json
+
+{
+  "email": "user2@localhst.com",
+  "password": "P@ssword2",
+  "firstName":"First",
+  "lastName": "Last"
+}
+
+###
+POST {{HoteListing}}/api/auth/login
+Content-Type: application/json
+
+{
+  "email": "admin13@localhost.com",
+  "password": "P@ssword2"
+}
+
+###
+POST {{HoteListing}}/api/defaultauth/login
+Content-Type: application/json
+
+{
+  "email": "user@localhost.com",
+  "password": "P@ssword1"
+}
+
+###
+
+POST {{HoteListing}}/api/auth/register
+Content-Type: application/json
+
+{
+  "email": "admin13@localhost.com",
+  "password": "P@ssword2",
+  "firstName":"First",
+  "lastName": "Last",
+  "role": "Administrator"
+}
+
+###
+
+GET {{HoteListing}}/api/apikey
+X-Api-Key: {{apiKey}}
+
+###
+
+GET {{HoteListing}}/api/basicauth
+Authorization: Basic dXNlcjFAbG9jYWxob3N0LmNvbTpQQHNzd29yZDE=
+
+###
